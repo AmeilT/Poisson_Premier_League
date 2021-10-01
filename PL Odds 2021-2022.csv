@@ -1,31 +1,51 @@
-,Home,Away,Draw,Time,Fixture,Score,Date,Home Team,Away Team,Home Odds,Away Odds,Draw Odds
-0,393/100,39/50,69/25,15:30,Wolves - Manchester Utd,0:1,29 Aug 2021,Wolves , Manchester Utd,4.93,1.78,3.76
-1,231/100,123/100,64/25,13:00,Burnley - Leeds,1:1,29 Aug 2021,Burnley , Leeds,3.31,2.23,3.56
-2,23/50,709/100,87/25,13:00,Tottenham - Watford,1:0,29 Aug 2021,Tottenham , Watford,1.46,8.09,4.48
-5,29/20,207/100,59/25,16:30,Liverpool - Chelsea,1:1,28 Aug 2021,Liverpool , Chelsea,2.45,3.07,3.36
-6,109/100,74/25,58/25,14:00,Aston Villa - Brentford,1:1,28 Aug 2021,Aston Villa , Brentford,2.09,3.96,3.32
-7,33/25,239/100,113/50,14:00,Brighton - Everton,0:2,28 Aug 2021,Brighton , Everton,2.32,3.39,3.26
-8,73/50,189/100,257/100,14:00,Newcastle - Southampton,2:2,28 Aug 2021,Newcastle , Southampton,2.46,2.89,3.57
-9,13/4,91/100,53/20,14:00,Norwich - Leicester,1:2,28 Aug 2021,Norwich , Leicester,4.25,1.91,3.65
-10,57/100,559/100,311/100,14:00,West Ham - Crystal Palace,2:2,28 Aug 2021,West Ham , Crystal Palace,1.57,6.59,4.11
-11,7/20,228/25,429/100,11:30,Manchester City - Arsenal,5:0,28 Aug 2021,Manchester City , Arsenal,1.35,10.12,5.29
-14,147/100,48/25,249/100,19:00,West Ham - Leicester,4:1,23 Aug 2021,West Ham , Leicester,2.47,2.92,3.49
-17,179/50,22/25,51/20,15:30,Arsenal - Chelsea,0:2,22 Aug 2021,Arsenal , Chelsea,4.58,1.88,3.55
-18,443/100,63/100,327/100,13:00,Southampton - Manchester Utd,1:1,22 Aug 2021,Southampton , Manchester Utd,5.43,1.63,4.27
-19,39/20,17/10,209/100,13:00,Wolves - Tottenham,0:1,22 Aug 2021,Wolves , Tottenham,2.95,2.7,3.09
-22,37/50,91/20,13/5,16:30,Brighton - Watford,2:0,21 Aug 2021,Brighton , Watford,1.74,5.55,3.6
-23,21/25,33/10,29/10,14:00,Aston Villa - Newcastle,2:0,21 Aug 2021,Aston Villa , Newcastle,1.84,4.3,3.9
-24,83/50,191/100,219/100,14:00,Crystal Palace - Brentford,0:0,21 Aug 2021,Crystal Palace , Brentford,2.66,2.91,3.19
-25,57/50,129/50,251/100,14:00,Leeds - Everton,2:2,21 Aug 2021,Leeds , Everton,2.14,3.58,3.51
-26,3/25,2269/100,228/25,14:00,Manchester City - Norwich,5:0,21 Aug 2021,Manchester City , Norwich,1.12,23.69,10.12
-27,1/4,577/50,279/50,11:30,Liverpool - Burnley,2:0,21 Aug 2021,Liverpool , Burnley,1.25,12.54,6.58
-30,249/50,61/100,63/20,15:30,Tottenham - Manchester City,1:0,15 Aug 2021,Tottenham , Manchester City,5.98,1.61,4.15
-31,239/100,6/5,63/25,13:00,Newcastle - West Ham,2:4,15 Aug 2021,Newcastle , West Ham,3.39,2.2,3.52
-34,603/100,9/20,403/100,16:30,Norwich - Liverpool,0:3,14 Aug 2021,Norwich , Liverpool,7.03,1.45,5.03
-35,111/50,149/100,53/25,14:00,Burnley - Brighton,1:2,14 Aug 2021,Burnley , Brighton,3.22,2.49,3.12
-36,8/25,1003/100,109/25,14:00,Chelsea - Crystal Palace,3:0,14 Aug 2021,Chelsea , Crystal Palace,1.32,11.03,5.36
-37,21/20,74/25,121/50,14:00,Everton - Southampton,3:1,14 Aug 2021,Everton , Southampton,2.05,3.96,3.42
-38,37/50,104/25,279/100,14:00,Leicester - Wolves,1:0,14 Aug 2021,Leicester , Wolves,1.74,5.16,3.79
-39,63/25,123/100,233/100,14:00,Watford - Aston Villa,3:2,14 Aug 2021,Watford , Aston Villa,3.52,2.23,3.33
-40,63/100,111/25,13/4,11:30,Manchester Utd - Leeds,5:1,14 Aug 2021,Manchester Utd , Leeds,1.63,5.44,4.25
-43,293/100,109/100,23/10,19:00,Brentford - Arsenal,2:0,13 Aug 2021,Brentford , Arsenal,3.93,2.09,3.3
+,Home,Away,Time,Fixture,Score,Draw,Date,Home Team,Away Team,Home Odds,Away Odds,Draw Odds
+0,191/100,43/25,19:00,Crystal Palace - Brighton,1:1,211/100,27 Sep 2021,Crystal Palace , Brighton,2.91,2.72,3.11
+3,123/100,62/25,15:30,Arsenal - Tottenham,3:1,241/100,26 Sep 2021,Arsenal , Tottenham,2.23,3.48,3.41
+4,119/100,13/5,13:00,Southampton - Wolves,0:1,233/100,26 Sep 2021,Southampton , Wolves,2.19,3.6,3.33
+7,337/50,21/50,16:30,Brentford - Liverpool,3:3,199/50,25 Sep 2021,Brentford , Liverpool,7.74,1.42,4.98
+8,7/10,459/100,14:00,Everton - Norwich,2:0,11/4,25 Sep 2021,Everton , Norwich,1.7,5.59,3.75
+9,201/100,34/25,14:00,Leeds - West Ham,1:2,261/100,25 Sep 2021,Leeds , West Ham,3.01,2.36,3.61
+10,69/100,447/100,14:00,Leicester - Burnley,2:2,72/25,25 Sep 2021,Leicester , Burnley,1.69,5.47,3.88
+11,57/50,64/25,14:00,Watford - Newcastle,1:1,63/25,25 Sep 2021,Watford , Newcastle,2.14,3.56,3.52
+12,48/25,33/20,11:30,Chelsea - Manchester City,0:1,11/5,25 Sep 2021,Chelsea , Manchester City,2.92,2.65,3.2
+13,41/100,7/1,11:30,Manchester Utd - Aston Villa,0:1,201/50,25 Sep 2021,Manchester Utd , Aston Villa,1.41,8.0,5.02
+16,169/50,19/20,15:30,Tottenham - Chelsea,0:3,61/25,19 Sep 2021,Tottenham , Chelsea,4.38,1.95,3.44
+17,77/50,41/20,13:00,Brighton - Leicester,2:1,111/50,19 Sep 2021,Brighton , Leicester,2.54,3.05,3.22
+18,341/100,21/25,13:00,West Ham - Manchester Utd,1:2,281/100,19 Sep 2021,West Ham , Manchester Utd,4.41,1.84,3.81
+21,121/100,251/100,16:30,Aston Villa - Everton,3:0,12/5,18 Sep 2021,Aston Villa , Everton,2.21,3.51,3.4
+22,283/100,1/1,14:00,Burnley - Arsenal,0:1,267/100,18 Sep 2021,Burnley , Arsenal,3.83,2.0,3.67
+23,7/25,263/25,14:00,Liverpool - Crystal Palace,3:0,129/25,18 Sep 2021,Liverpool , Crystal Palace,1.28,11.52,6.16
+24,9/50,1657/100,14:00,Manchester City - Southampton,0:0,359/50,18 Sep 2021,Manchester City , Southampton,1.18,17.57,8.18
+25,13/10,119/50,14:00,Norwich - Watford,1:3,58/25,18 Sep 2021,Norwich , Watford,2.3,3.38,3.32
+26,21/25,211/50,11:30,Wolves - Brentford,0:2,59/25,18 Sep 2021,Wolves , Brentford,1.84,5.22,3.36
+29,213/100,63/50,19:00,Newcastle - Leeds,1:1,67/25,17 Sep 2021,Newcastle , Leeds,3.13,2.26,3.68
+32,77/100,22/5,19:00,Everton - Burnley,3:1,51/20,13 Sep 2021,Everton , Burnley,1.77,5.4,3.55
+35,391/100,67/100,15:30,Leeds - Liverpool,0:3,337/100,12 Sep 2021,Leeds , Liverpool,4.91,1.67,4.37
+38,17/50,889/100,16:30,Chelsea - Aston Villa,3:0,429/100,11 Sep 2021,Chelsea , Aston Villa,1.34,9.89,5.29
+39,21/50,341/50,14:00,Arsenal - Norwich,1:0,99/25,11 Sep 2021,Arsenal , Norwich,1.42,7.82,4.96
+40,51/25,167/100,14:00,Brentford - Brighton,0:1,41/20,11 Sep 2021,Brentford , Brighton,3.04,2.67,3.05
+41,93/20,16/25,14:00,Leicester - Manchester City,0:1,309/100,11 Sep 2021,Leicester , Manchester City,5.65,1.64,4.09
+42,19/100,1523/100,14:00,Manchester Utd - Newcastle,4:1,649/100,11 Sep 2021,Manchester Utd , Newcastle,1.19,16.23,7.49
+43,211/100,67/50,14:00,Southampton - West Ham,0:0,253/100,11 Sep 2021,Southampton , West Ham,3.11,2.34,3.53
+44,66/25,31/25,14:00,Watford - Wolves,0:2,221/100,11 Sep 2021,Watford , Wolves,3.64,2.24,3.21
+45,303/100,107/100,11:30,Crystal Palace - Tottenham,3:0,47/20,11 Sep 2021,Crystal Palace , Tottenham,4.03,2.07,3.35
+48,393/100,39/50,15:30,Wolves - Manchester Utd,0:1,69/25,29 Aug 2021,Wolves , Manchester Utd,4.93,1.78,3.76
+49,231/100,61/50,13:00,Burnley - Leeds,1:1,64/25,29 Aug 2021,Burnley , Leeds,3.31,2.22,3.56
+50,23/50,709/100,13:00,Tottenham - Watford,1:0,87/25,29 Aug 2021,Tottenham , Watford,1.46,8.09,4.48
+53,29/20,207/100,16:30,Liverpool - Chelsea,1:1,237/100,28 Aug 2021,Liverpool , Chelsea,2.45,3.07,3.37
+54,109/100,74/25,14:00,Aston Villa - Brentford,1:1,233/100,28 Aug 2021,Aston Villa , Brentford,2.09,3.96,3.33
+55,33/25,239/100,14:00,Brighton - Everton,0:2,113/50,28 Aug 2021,Brighton , Everton,2.32,3.39,3.26
+56,73/50,19/10,14:00,Newcastle - Southampton,2:2,257/100,28 Aug 2021,Newcastle , Southampton,2.46,2.9,3.57
+57,13/4,91/100,14:00,Norwich - Leicester,1:2,53/20,28 Aug 2021,Norwich , Leicester,4.25,1.91,3.65
+58,57/100,561/100,14:00,West Ham - Crystal Palace,2:2,311/100,28 Aug 2021,West Ham , Crystal Palace,1.57,6.61,4.11
+59,7/20,911/100,11:30,Manchester City - Arsenal,5:0,429/100,28 Aug 2021,Manchester City , Arsenal,1.35,10.11,5.29
+62,147/100,193/100,19:00,West Ham - Leicester,4:1,249/100,23 Aug 2021,West Ham , Leicester,2.47,2.93,3.49
+65,359/100,22/25,15:30,Arsenal - Chelsea,0:2,51/20,22 Aug 2021,Arsenal , Chelsea,4.59,1.88,3.55
+66,111/25,63/100,13:00,Southampton - Manchester Utd,1:1,13/4,22 Aug 2021,Southampton , Manchester Utd,5.44,1.63,4.25
+67,39/20,171/100,13:00,Wolves - Tottenham,0:1,21/10,22 Aug 2021,Wolves , Tottenham,2.95,2.71,3.1
+70,37/50,457/100,16:30,Brighton - Watford,2:0,259/100,21 Aug 2021,Brighton , Watford,1.74,5.57,3.59
+71,21/25,83/25,14:00,Aston Villa - Newcastle,2:0,29/10,21 Aug 2021,Aston Villa , Newcastle,1.84,4.32,3.9
+72,83/50,191/100,14:00,Crystal Palace - Brentford,0:0,219/100,21 Aug 2021,Crystal Palace , Brentford,2.66,2.91,3.19
+73,113/100,13/5,14:00,Leeds - Everton,2:2,251/100,21 Aug 2021,Leeds , Everton,2.13,3.6,3.51
+74,13/100,2281/100,14:00,Manchester City - Norwich,5:0,227/25,21 Aug 2021,Manchester City , Norwich,1.13,23.81,10.08
+75,1/4,571/50,11:30,Liverpool - Burnley,2:0,277/50,21 Aug 2021,Liverpool , Burnley,1.25,12.42,6.54

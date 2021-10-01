@@ -1,9 +1,39 @@
 import numpy as np
+from scipy.stats import poisson
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from scipy.optimize import minimize
+import os
 
+from constants import dict_team
 
 class Percent(float):
     def __str__(self):
         return '{:.2%}'.format(self)
+
+def import_data(dict_team=dict_team):
+    seasons = [2020, 2021]
+    PL = pd.DataFrame()
+    for season in seasons:
+        add = pd.read_csv(os.getcwd()+f'\\PL Odds {season}-{season + 1}.csv')
+        PL = pd.concat([PL, add])
+        PL["Home Goals"] = [int(x.split(":")[0]) for x in PL["Score"]]
+        PL["Away Goals"] = [int(x.split(":")[1]) for x in PL["Score"]]
+    # Convert Date to DateTime
+    PL['DateTime'] = PL["Date"] + " " + PL["Time"]
+    PL['DateTime'] = pd.to_datetime(PL['Date'])
+    PL.sort_values("DateTime", ascending=True, inplace=True)
+
+    # Clean Team names
+    PL["Home Team"] = PL["Home Team"].apply(lambda x: x.strip())
+    PL["Away Team"] = PL["Away Team"].apply(lambda x: x.strip())
+    PL.rename(columns={"Home Team": "HomeTeam", "Away Team": "AwayTeam"}, inplace=True)
+
+    PL["HomeTeam"] = PL["HomeTeam"].map(dict_team)
+    PL["AwayTeam"] = PL["AwayTeam"].map(dict_team)
+
+    return PL
 
 def score_matrix(dict,home,away):
     home_mean = dict["Home Goals"][home]
@@ -97,9 +127,9 @@ def outcomes(home,away,dict):
 
 def match_result(df):
     if df["Home Goals"]>df["Away Goals"]:
-        return df["Home Team"]
+        return df["HomeTeam"]
     elif df["Home Goals"]<df["Away Goals"]:
-        return df["Away Team"]
+        return df["AwayTeam"]
     else:
         return "Draw"
 
@@ -128,7 +158,7 @@ def log_likelihood(
     away_defence,
     home_advantage,
     rho,
-    weight):
+):
     goal_expectation_home = np.exp(home_attack + away_defence + home_advantage)
     goal_expectation_away = np.exp(away_attack + home_defence)
 
@@ -144,25 +174,23 @@ def log_likelihood(
 
     if goal_expectation_home < 0 or goal_expectation_away < 0 or adj_llk < 0:
         return 10000
-
-    log_llk = weight * (np.log(home_llk) + np.log(away_llk) + np.log(adj_llk))
-
-    return -log_llk
+    if 0 in [home_llk,away_llk,adj_llk]:
+        return 10000
+    else:
+        log_llk = np.log(home_llk) + np.log(away_llk) + np.log(adj_llk)
+        return -log_llk
 
 #xi value determined by trial and error to find the value that minimised rank score probability 
-def fit_poisson_model(df, xi=0.0001):
-    teams = np.sort(np.unique(np.concatenate([df["Home Team"], df["Away Team"]])))
+def fit_poisson_model(df):
+    teams = np.sort(np.unique(np.concatenate([df["HomeTeam"], df["AwayTeam"]])))
     n_teams = len(teams)
-
-    df["days_since"] = (df["DateTime"].max() - df["DateTime"]).dt.days
-    df["weight"] = dc_decay(xi, df["days_since"])
 
     params = np.concatenate(
         (
             np.random.uniform(0.5, 1.5, (n_teams)),  # attack strength
             np.random.uniform(0, -1, (n_teams)),  # defence strength
             [0.25],  # home advantage
-            [-0.1],  # rho
+            [-0.1], # rho
         )
     )
 
@@ -177,13 +205,12 @@ def fit_poisson_model(df, xi=0.0001):
             tmp = log_likelihood(
                 row["Home Goals"],
                 row["Away Goals"],
-                attack_params[row["Home Team"]],
-                defence_params[row["Home Team"]],
-                attack_params[row["Away Team"]],
-                defence_params[row["Away Team"]],
+                attack_params[row["HomeTeam"]],
+                defence_params[row["HomeTeam"]],
+                attack_params[row["AwayTeam"]],
+                defence_params[row["AwayTeam"]],
                 home_advantage,
-                rho,
-                row["weight"],
+                rho
             )
             llk.append(tmp)
 
@@ -212,6 +239,8 @@ def fit_poisson_model(df, xi=0.0001):
             res["x"],
         )
     )
+
+    print("Log Likelihood: ", res["fun"])
 
     return model_params
 
@@ -250,6 +279,15 @@ def dixon_coles_predict(params, home_team, away_team):
     outcome=outcomes[probabilities.index(outcome_prob)]
     return [outcome,outcome_prob]
 
+def dixon_coles_predict_H_A_D(params, home_team, away_team,show="home_team"):
+    probabilities = predict(params, home_team, away_team)
+    if show=="home_team":
+        return probabilities[0]
+    elif show=="away_team":
+        return probabilities[2]
+    else:
+        return probabilities[1]
+
 
 def home_draw_away(df):
     if df["Home Goals"]>df["Away Goals"]:
@@ -268,3 +306,31 @@ def bet_poisson(home_team,away_team,home_odds,away_odds,draw_odds,result,predict
     else:
         profit=- 1
         return profit
+
+
+def gw_predictions(gameweek,params,goal_dict):
+    fixtures_df = pd.read_csv("PL Fixtures.csv")
+    fixtures_df = fixtures_df[fixtures_df["Round Number"] == gameweek]
+    fixtures_df["Home Team"] = fixtures_df["Home Team"].apply(lambda x: x.strip())
+    fixtures_df["Away Team"] = fixtures_df["Away Team"].apply(lambda x: x.strip())
+    fixtures_df.rename(columns={"Home Team": "HomeTeam", "Away Team": "AwayTeam"}, inplace=True)
+
+    fixtures_df["HomeTeam"] = fixtures_df["HomeTeam"].map(dict_team)
+    fixtures_df["AwayTeam"] = fixtures_df["AwayTeam"].map(dict_team)
+    fixtures_df["Predict DC"] = fixtures_df.apply(
+        lambda row: dixon_coles_predict(params=params, home_team=row["HomeTeam"], away_team=row["AwayTeam"])[0],
+        axis=1)
+
+    fixtures_df["Predict"] = fixtures_df.apply(
+        lambda row: outcomes(home=row["HomeTeam"], away=row["AwayTeam"], dict=goal_dict), axis=1)
+    fixtures_df["Home Win DC"] = fixtures_df.apply(
+        lambda row: dixon_coles_predict_H_A_D(params=params, home_team=row["HomeTeam"], away_team=row["AwayTeam"],
+                                              show="home_team"), axis=1)
+    fixtures_df["Draw DC"] = fixtures_df.apply(
+        lambda row: dixon_coles_predict_H_A_D(params=params, home_team=row["HomeTeam"], away_team=row["AwayTeam"],
+                                              show="draw"), axis=1)
+    fixtures_df["Away Win DC"] = fixtures_df.apply(
+        lambda row: dixon_coles_predict_H_A_D(params=params, home_team=row["HomeTeam"], away_team=row["AwayTeam"],
+                                              show="away_team"), axis=1)
+
+    return fixtures_df
